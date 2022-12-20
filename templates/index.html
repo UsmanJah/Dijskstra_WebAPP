@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+<!--
+	 HTML5 UP-OUSMANE DIA
+-->
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{url_for('static',filename='assets/css/main.css')}}"/>
+		<!-- Wrapper-->
+		<link rel="stylesheet" href="{{url_for('static',filename='assets1/css/main.css')}}" />
+		<noscript><link rel="stylesheet" href="{{url_for('static',filename='assets1/css/noscript.css')}}" /></noscript>
+ 
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+        <!-- MDB -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css" rel="stylesheet"/>
+
+        <!-- MDB -->
+		
+	   	<link rel="stylesheet" href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity=
+"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+	<body class="landing is-preload">
+
+<!-- Modal -->
+<div class="modal fade"
+id="exampleModal"
+tabindex="-1"
+role="dialog"
+aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+ 
+<div class="modal-dialog" role="document">
+	<div class="modal-content">
+	 
+		<!-- Add image inside the body of modal -->
+		<div class="modal-body">
+			<img id="image" src="{{url_for('static',filename='assets1/webfonts/Graph.png')}}"
+				alt="Click on button" />
+				<p>En utilisant l'approche de la centralité de proximité, on peut considérer Kaolack comme noeud central.<br>
+					Kaolack et Diourbel en utilisant l'approche de la centralité intermédiaire</p>
+			
+		</div>
+
+		<div class="modal-footer">
+			<button type="button"
+			class="btn btn-secondary"
+			data-dismiss="modal">
+				Fermer
+		</button>
+		</div>
+	</div>
+</div>
+</div>
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header" class="alt" >
+					<h1><a href="index.html"></a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html"></a></li>
+							<li><a href="#" class="button"></a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Banner -->
+			
+				<section id="banner">
+					<ul class="actions special">
+						<li><a href="#" class="button primary" 
+							data-toggle="modal"
+							data-target="#exampleModal">Graphe</a></li>
+						<li><a href="#cta" class="button">Parcours</a></li>
+					</ul>
+				</section>
+
+            
+			<!-- Main -->
+				<section id="main" class="container">
+					
+					<section class="box special">
+						<header class="major">
+							<h2 >Short Path SN</h2>
+							<p> Grâce à l'implémation de l'algorithme de Djisktra nous avons mis à disposition<br />
+								une solution afin de permettre au voyageur de trouver leur chemin optimal Ine Cha Allah.</p>
+						</header>
+						
+					</section>
+           
+				</section>
+
+			<!-- CTA -->
+				<section id="cta">
+
+					<h2>My shortest path</h2>
+					
+					<p>{{affichage}}</p>
+					
+					<form class="row row-cols-lg-auto g-3 align-items-center" action="/result?dep={{depart}}&arr={{arrive}}" method="GET">
+						<div class="col-12">
+							<label class="visually-hidden" for="inlineFormSelectPref"></label>
+							<select class="select" name="dep">
+							  <option value="0">Ville de départ</option>
+							  <option value="Dakar">Dakar</option>
+							  <option value="Saint Louis">Saint Louis</option>
+							  <option value="Ziguinchor">Ziguinchor</option>
+							  <option value="Tamba">Tamba</option>
+							  <option value="Mbour">Mbour</option>
+							  <option value="Matam">Matam</option>
+							  <option value="Kaolack">Kaolack</option>
+							  <option value="Kolda">Kolda</option>
+							  <option value="Diourbel">Diourbel</option>
+							  <option value="Thiés">Thiés</option>
+							  <option value="Kédougou">Kédougou</option>
+							  <option value="Fatick">Fatick</option>
+							  <option value="Cap Skirring">Cap Skirring</option>
+							</select>
+						  </div>
+						<div class="col-12">
+						  <label class="visually-hidden" for="inlineFormSelectPref"></label>
+						  <select class="select" name="arr">
+							<option value="0">Ville de destination</option>
+							  <option value="Dakar">Dakar</option>
+							  <option value="Saint Louis">Saint Louis</option>
+							  <option value="Ziguinchor">Ziguinchor</option>
+							  <option value="Tamba">Tamba</option>
+							  <option value="Mbour">Mbour</option>
+							  <option value="Matam">Matam</option>
+							  <option value="Kaolack">Kaolack</option>
+							  <option value="Kolda">Kolda</option>
+							  <option value="Diourbel">Diourbel</option>
+							  <option value="Thiés">Thiés</option>
+							  <option value="Kédougou">Kédougou</option>
+							  <option value="Fatick">Fatick</option>
+							  <option value="Cap Skirring">Cap Skirring</option>	  
+						  </select>
+						</div>				  
+						<div class="col-12">
+						 <a href=# id=test> <button type="submit" class="btn btn-primary">Trouver</button></a>
+						</div>
+					  </form>
+
+				</section>
+			<!--Deuxiéme form-->
+           <!-- Wrapper -->
+			<div id="wrapper" class="divided">
+
+				<!-- One -->
+					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+						<div class="content">
+							<h1>Prototype-Dakar</h1>
+							<p class="major">Avec osmnx et la librairie Networks, nous pouvons implementer un tel algorithme en utilisant les latitudes et longitudes comme noeuds pour quelques positions<br><!--Nos faibles ressource des Calculs ne nous permettent pas d'en faire autant pour toute le Sénégal--></p>
+							<ul class="actions stacked">
+								<form class="row row-cols-lg-auto g-3 align-items-center" methode="GET" action="/map?dep_map={{position}}&arr_map={{destination}}">
+										<div class="col-12">
+											<label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+											<select class="select" name="dep_map"> <!--name="dep_map"-->
+								
+											  <option value="0">Position</option>
+											  <option value="Ma">Mamelles</option>
+											  <option value="Cap">Cap Manuel</option>
+											  <option value="Bel">Bel Air</option>
+											  <option value="Km">keur Massar</option>
+											  <option value="Glf">Golf</option>
+											  
+											</select>
+										  </div>
+										<div class="col-12">
+										  <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+										  <select class="select" name="arr_map">  <!--name="arr_map"-->
+											<option value="0">Destination</option>
+											  <option value="Ma">Mamelles</option>
+											  <option value="Cap">Cap Manuel</option>
+											  <option value="Bel">Bel Air</option>
+											  <option value="Km">Keur Massar</option>
+											  <option value="Glf">Golf</option>
+									
+										  </select>
+										</div>				  
+										<div class="col-12">
+											<button type="submit" class="btn btn-primary">Trouver</button>
+										</div>
+									  </form>
+				             <p>Ceci est une image. Nos faibles ressources de Calculs ne nous permettent pas d'en faire autant pour tout le Sénégal: <a href="https://colab.research.google.com/drive/1SrR5ckYl4wOq8iAM9EqWgO36HaAtL0h_?usp=sharing">Voir Notebook</a></p>
+							</ul>
+						</div>
+					
+						<div class="image" >
+							<img id="image" src="{{map}}"/>
+						</div>
+						
+					</section>
+	
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						
+						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<P>Ousmane DIA : Master Big Data Analytics</P>
+						
+					</ul>
+					<ul class="copyright">
+						<li><a href="https://html5up.net/">html5 up</a></li><li><a href="https://github.com/gboeing/osmnx">osmx</a></li><li><a href="https://pypi.org/project/folium/">folium</a></li>
+						<li><a href="https://pypi.org/project/networkx/">networkx</a></li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<script src="{{url_for('static',filename='assets1/js/mypath.js')}}"></script>
+		<script src="{{url_for('static',filename='assets1/js/jquery.min.js')}}"></script>
+			<script src="{{url_for('static',filename='assets1/js/jquery.scrollex.min.js')}}"></script>
+			<script src="{{url_for('static',filename='assets1/js/jquery.scrolly.min.js')}}"></script>
+			<script src="{{url_for('static',filename='assets1/js/browser.min.js')}}" ></script>
+			<script src="{{url_for('static',filename='assets1/js/breakpoints.min.js')}}"></script>
+			<script src="{{url_for('static',filename='assets1/js/util.js')}}"></script>
+			<script src="{{url_for('static',filename='assets1/js/main.js')}}"></script>
+
+
+
+			 <!-- Adding scripts to use bootstrap -->
+			 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+			 integrity=
+ "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+			 crossorigin="anonymous">
+	 </script>
+	 <script src=
+ "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+			 integrity=
+ "sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+			 crossorigin="anonymous">
+	 </script>
+	 <script src=
+ "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+			 integrity=
+ "sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+			 crossorigin="anonymous">
+	 </script>  
+			
+	</body>
+</html>
